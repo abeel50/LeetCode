@@ -13,12 +13,12 @@ class Solution(object):
         while p1 != None:
             if p1.val == 0:
                 temp = p1.next
-                if temp == None:
+                if temp == None: # for last zero check
                     p2.next= None
                     break
                 else:
                     while temp!= None and temp.val != 0:
-                        p1.val += temp.val
+                        p1.val += temp.val #adds values to node
                         temp = temp.next
                         p1.next = temp
                     p2 = p1 # pointer for last zero
