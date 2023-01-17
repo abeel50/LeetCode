@@ -1,39 +1,31 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         
+        #checks if dictionery has occurence of gigits more than once
+        # and also if digits is not 1-9
         def checkValid(digits):
             for k,v in digits.items():
-                if k!="." and (int(k) > 9 or int(k) < 1):
-                    return False
-                if k !="." and v > 1 and int(k) in range(1,10):
+                if k!="." and v > 1:
                     return False
             return True
         
-        
         for i, r in enumerate(board):
-            r_digits = Counter(r)
-            c_digits = Counter([row[i] for row in board])
+            r_digits = Counter(r) #creates dict for row
+            c_digits = Counter([row[i] for row in board]) #creates dict for colums
+            #if any invalid digit found in ROW or COL return False
             if not checkValid(r_digits) or not checkValid(c_digits):
                 return False
             
-        r, c = 0, 0
-        for k in range(1,10):
-            d = defaultdict(int)
-            for i in range(r, r + 3):
-                for j in range(c, c + 3):
-                    curr = board[i][j]
-                    if curr == ".":
-                        continue
-                    d[curr] += 1
-                    if d[curr] > 1:
-                        return False
-            
-            if k % 3 == 0:
-                r = 0
-                c += 3
-            else:
-                r+= 3
-            
-    
+        for i in range(0, 9, 3):
+            for j in range(0, 9, 3):
+                d = [0] * 9
+                for ii in range(i, i + 3):
+                    for jj in range(j, j + 3):
+                        curr = board[ii][jj]
+                        if curr == ".":
+                            continue
+                        d[int(curr) - 1] += 1
+                        if d[int(curr) - 1] > 1:
+                            return False
         return True
         
