@@ -1,10 +1,5 @@
-class Solution(object):
-    def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
         def binarySearch(array, x, low, high):
 
             if high >= low:
@@ -26,4 +21,4 @@ class Solution(object):
             else:
                 return -1
         return binarySearch(nums,target,0,len(nums)-1)
-            
+        
