@@ -23,6 +23,7 @@ class Solution:
             # until queu is not empty
             while q:
                 # pop from front
+                # if we replace popleft() with pop() then it will be a DFS
                 row, col = q.popleft()
             
                 # for right, left, up ,down 
