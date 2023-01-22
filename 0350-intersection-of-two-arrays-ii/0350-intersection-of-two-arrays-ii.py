@@ -18,7 +18,7 @@ class Solution(object):
         for k,v in h1.items():
             if k in h2:
                 m = min(h1[k], h2[k])
-                res.extend([k] *m)
+                res.extend([k] * m)
         return res
             
         
