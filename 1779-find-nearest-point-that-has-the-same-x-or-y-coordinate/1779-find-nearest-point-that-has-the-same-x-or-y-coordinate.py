@@ -1,12 +1,5 @@
-class Solution(object):
-    def nearestValidPoint(self, x, y, points):
-        """
-        :type x: int
-        :type y: int
-        :type points: List[List[int]]
-        :rtype: int
-        """
-        
+class Solution:
+    def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
         minDistance = float('+inf')
         minIndex = -1
         for i in range(len(points)):
@@ -14,6 +7,6 @@ class Solution(object):
             if xi == x or yi == y:
                 d = abs(x - xi) + abs(y - yi)
                 if d < minDistance:
-                    minDistance = d
+                    minDistance = min(d, minDistance)
                     minIndex = i
         return minIndex
