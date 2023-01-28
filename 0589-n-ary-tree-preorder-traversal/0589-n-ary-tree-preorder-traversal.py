@@ -12,7 +12,7 @@ class Solution:
         res =[]
         
         def helper(node):
-            if node is None: return
+            if not node : return
             res.append(node.val)
             if node.children is not None:
                 for i in node.children:
