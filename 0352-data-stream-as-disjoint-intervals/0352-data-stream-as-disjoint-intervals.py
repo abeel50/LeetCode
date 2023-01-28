@@ -3,7 +3,9 @@ class SummaryRanges:
 
     def __init__(self):
         self.nums = SortedSet()
+        self.intervals = SortedDict()
         
+            
     def addNum(self, value: int) -> None:
         self.nums.add(value)
 
