@@ -10,15 +10,12 @@ class ATM:
             self.bank_notes[k] += banknotesCount[i]
             i += 1
         
-
     def withdraw(self, amount: int) -> List[int]:
-        print("befor withdraw",self.bank_notes)
 
         notes = [0,0,0,0,0]
         idx = 4
         for k in reversed(self.bank_notes.keys()):
             if amount >= k:
-                print("Note: ",k)
                 c = amount // k
                 if c > self.bank_notes[k]:
                     c = self.bank_notes[k]
@@ -26,7 +23,6 @@ class ATM:
                 amount -= c * k
                 notes[idx] = c
             idx -= 1
-            print("Notes: ",notes)
         
         if amount == 0: return notes
         else:
