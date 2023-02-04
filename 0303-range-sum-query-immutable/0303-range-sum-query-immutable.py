@@ -9,7 +9,7 @@ class NumArray:
         self.prefix[0] = self.nums[0]
         for i in range(1, len(self.nums)):
             self.prefix[i] += self.prefix[i-1] + self.nums[i]
-        print(self.prefix)
+        # print(self.prefix)
         
 
     def sumRange(self, left: int, right: int) -> int:
