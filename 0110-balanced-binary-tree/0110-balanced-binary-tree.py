@@ -1,17 +1,11 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution(object):
-    def isBalanced(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
-
-        # function recursively finds height
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def height(node):
             if node == None: return 0
             return 1 + max(height(node.left),height(node.right))
@@ -26,3 +20,4 @@ class Solution(object):
             else:
                 return True and helper(root.left) and helper(root.right) #recursive call
         return helper(root)
+        
