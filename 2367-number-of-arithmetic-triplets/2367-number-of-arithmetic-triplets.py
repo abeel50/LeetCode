@@ -1,12 +1,10 @@
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        h = {}
-        
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                for k in range(j + 1, len(nums)):
-                    if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
-                        h[(i, j, k)] = True
-        return len(h.keys())
-                        
+        checked = set()
+        res = 0
+        for n in nums:
+            if n - diff in checked and n - (diff * 2) in checked:
+                res += 1
+            checked.add(n)
+        return res                        
         
