@@ -8,7 +8,7 @@ class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         def height(node):
             if node == None: return 0
-            return 1 + max(height(node.left),height(node.right))
+            return 1 + max(height(node.left), height(node.right))
              
         def helper(root):
             if root== None: return True
