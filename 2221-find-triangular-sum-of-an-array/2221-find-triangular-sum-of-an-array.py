@@ -3,12 +3,11 @@ class Solution:
         
         def rec(arr):
             if len(arr) == 1:
-                return arr[0]
-            
-            res = []
+                return arr[0]            
             for i in range(len(arr) - 1):
-                res.append((arr[i]+arr[i+1]) % 10)
-            return rec(res)
+                arr[i] = (arr[i] + arr[i + 1]) % 10
+            arr.pop()
+            return rec(arr)
         
         return rec(nums)
             
