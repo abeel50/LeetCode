@@ -1,11 +1,8 @@
-class Solution(object):
-    def dailyTemperatures(self, temperatures):
-        """
-        :type temperatures: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         st = [] #stack
         result= [0] * len(temperatures) #results array
+        
         for i in range(len(temperatures)):
             if len(st) == 0: #if atck is empty
                 st.append(i) #push current temp.
