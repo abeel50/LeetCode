@@ -8,7 +8,7 @@ class Solution:
         while l < r:
             for i in range(r - l):
                 top , bottom = l, r
-                
+            
                 # save the topleft
                 topLeft = matrix[top][l + i]
                 
