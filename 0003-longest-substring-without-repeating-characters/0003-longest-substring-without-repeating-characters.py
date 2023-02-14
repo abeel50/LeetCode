@@ -18,8 +18,6 @@ class Solution:
                 del h[c]   
             h[c] = i
             end = i
-            # print(h)
-            # print(start, end, maxLength)
         
         return max(maxLength, (end - start) + 1)
 
