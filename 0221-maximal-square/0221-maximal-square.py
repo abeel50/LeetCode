@@ -3,6 +3,7 @@ class Solution:
         ROWS, COLS = len(matrix), len(matrix[0])
         # each (r,c) -> maxLength
         cache = {}
+        res = float('-inf')
         
         def rec(r, c):
             if r >= ROWS or c >= COLS:
@@ -17,8 +18,11 @@ class Solution:
                 if matrix[r][c] == "1":
                     cache[(r, c)] = 1 + min(down, right, diag)
             
+            nonlocal res
+            res = max(res, cache[(r, c)])
             return cache[(r, c)]
         
         rec(0, 0)
-        return max(cache.values()) ** 2
+        return res ** 2
+        # return max(cache.values()) ** 2
         
