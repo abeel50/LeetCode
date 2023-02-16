@@ -13,6 +13,7 @@ class Solution:
             rec(root.left)
             inOrder.append(root.val)
             rec(root.right)
+            
         rec(root)        
         return inOrder[k-1]
             
