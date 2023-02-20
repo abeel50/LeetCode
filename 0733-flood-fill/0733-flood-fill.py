@@ -1,6 +1,6 @@
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-        # (r,c)
+        # (r,c) are index of pixels
         colored_pixels = {}
         # for right, left, up ,down
         neighbours = [(0, 1), (0, -1), (-1, 0), (1, 0)]
