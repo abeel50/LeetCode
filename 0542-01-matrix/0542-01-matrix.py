@@ -1,8 +1,7 @@
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
         q = collections.deque()
-        row = len(mat)
-        col = len(mat[0])
+        row, col= len(mat), len(mat[0])
         dirs = [(-1, 0),(0, -1),(1,0),(0,1)] 
         for x in range(row):
             for y in range(col):
@@ -13,7 +12,7 @@ class Solution:
         while q:
             x,y = q.popleft()
             for dx, dy in dirs:
-                new_x, new_y = x+dx, y+dy
+                new_x, new_y = x + dx, y + dy
                 if 0 <= new_x < row and 0 <= new_y < col and mat[new_x][new_y] > mat[x][y]+1:
                     q.append((new_x,new_y))
                     mat[new_x][new_y] = mat[x][y]+1
