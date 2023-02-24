@@ -3,10 +3,10 @@ class MinStack:
     def __init__(self):
         self.st = [] #for stack
         self.minHash = {} # for min tracking
+        
     def getlen(self):
         return len(self.st)
         
-
     def push(self, val: int) -> None:
         # if stack and hash is empty
         if len(self.st) == 0:
