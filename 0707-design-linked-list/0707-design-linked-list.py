@@ -12,23 +12,14 @@ class MyLinkedList:
         self.head.next, self.tail.prv = self.tail, self.head
         self.length = 0
         
-    def printList(self):
-        temp = self.head
-        while temp:
-            print(temp.val,"-->",end ="")
-            temp = temp.next
-        print()
-        
+
     def get(self, index: int) -> int:
-        # print("index:" ,index, "length",self.length)
         if index not in range(self.length): return -1
         idx = 0
         temp = self.head.next
         while temp and temp!= self.tail and idx != index:
             temp = temp.next
             idx += 1
-        # print("get Index:", index," ",end="")
-        # self.printList()
         return temp.val
         
 
@@ -37,19 +28,14 @@ class MyLinkedList:
         self.head.next = ListNode(val, next, prv)
         next.prv = self.head.next
         self.length += 1
-        # print("Add Head:", val," ",end="")
-        # self.printList()
-         
+     
 
     def addAtTail(self, val: int) -> None:
         next, prv = self.tail, self.tail.prv
         prv.next = ListNode(val,next,prv)
         next.prv = prv.next
         self.length += 1
-        # print("Add Tail:", val," ",end="")
-        # self.printList()
 
-        
 
     def addAtIndex(self, index: int, val: int) -> None:
         if index == self.length:
@@ -67,10 +53,7 @@ class MyLinkedList:
         prv = temp.prv
         prv.next = ListNode(val,temp,prv)
         temp.prv = prv.next
-        self.length += 1
-        
-        # print("Add Index:", index,"val: ",val)
-        # self.printList()            
+        self.length += 1          
         
 
     def deleteAtIndex(self, index: int) -> None:
@@ -85,9 +68,7 @@ class MyLinkedList:
         prv,next = temp.prv, temp.next
         prv.next, next.prv = next, prv
         self.length -= 1
-        
-        # print("Remove Index:", index," ",end="")
-        # self.printList()
+
 
         
 
