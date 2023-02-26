@@ -1,7 +1,7 @@
 class RandomizedSet:
 
     def __init__(self):
-        self.numHash = {}
+        self.numHash = defaultdict(list)
         self.numList = []
         
 
